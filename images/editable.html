@@ -1,0 +1,133 @@
+<!DOCTYPE html><html class="" lang="sk"><head><script type="text/javascript" class="silex-json-styles" data-silex-static="">
+    window.silex = window.silex || {}
+    window.silex.data = {"site":{"width":1200},"pages":[{"id":"page-page-1","displayName":"Page 1","link":{"linkType":"LinkTypePage","href":"#!page-page-1"},"canDelete":true,"canProperties":true,"canMove":true,"canRename":true,"opened":false}]}</script>
+    <meta charset="UTF-8">
+    <!-- generator meta tag -->
+    <!-- leave this for stats and Silex version check -->
+    <meta name="generator" content="Silex v2.2.14">
+    <!-- End of generator meta tag -->
+    <script type="text/javascript" src="https://editor.silex.me/static/2.12/jquery.js" data-silex-static=""></script>
+    <script type="text/javascript" src="https://editor.silex.me/static/2.12/jquery-ui.js" data-silex-static="" data-silex-remove-publish=""></script>
+    <script type="text/javascript" src="https://editor.silex.me/static/2.12/pageable.js" data-silex-static="" data-silex-remove-publish=""></script>
+    <script type="text/javascript" src="https://editor.silex.me/static/2.12/front-end.js" data-silex-static=""></script>
+    <link rel="stylesheet" href="https://editor.silex.me/static/2.12/normalize.css" data-silex-static="">
+    <link rel="stylesheet" href="https://editor.silex.me/static/2.12/front-end.css" data-silex-static="">
+
+    <style class="silex-style"></style>
+    <script type="text/javascript" class="silex-script">// wait for the HTML to be fully loaded
+$(document).ready(function () {    
+    // init the mouse parallax effect
+    $('.mouse-parallax').mousemove(function (e) {
+        mouseUpdate(e);
+    });    
+    // init the scroll parallax effect
+    $(window).scroll(function (e) {
+        scrollUpdate();
+    });
+    scrollUpdate();
+});
+// mouse parallax effect
+function mouseUpdate(e) {
+    var container = $('.mouse-parallax');
+    $('.mouse-parallax .layer-one').each(function() {
+        parallax(e.pageX, e.pageY, this, container, 1);
+    });
+    $('.mouse-parallax .layer-two').each(function() {
+        parallax(e.pageX, e.pageY, this, container, 2);
+    });
+    $('.mouse-parallax .layer-three').each(function() {
+        parallax(e.pageX, e.pageY, this, container, 3);
+    });
+}
+// scroll parallax effect
+function scrollUpdate() {
+  // just like for the mouse, but with the mouse at the center of the screen
+  var centerY = window.scrollY + ($(window).height() / 2);
+  var centerX = window.scrollX + ($(window).width() / 2);
+  var container = $('.scroll-parallax');
+  $('.scroll-parallax .layer-one').each(function() {
+      parallax(centerX, centerY, this, container, 1);
+  });
+  $('.scroll-parallax .layer-two').each(function() {
+      parallax(centerX, centerY, this, container, 2);
+  });
+  $('.scroll-parallax .layer-three').each(function() {
+      parallax(centerX, centerY, this, container, 3);
+  });
+}
+// parallax effect
+function parallax(pageX, pageY, target, container, layer) {
+    var layer_coeff = 10 / layer;
+    var offset = {};
+    var parentOffset = $(container).offset() || {};
+    var initialOffsetX = $(target).attr('data-paralax-initial-offset-x');
+    var initialOffsetY = $(target).attr('data-paralax-initial-offset-y');
+    if(typeof initialOffsetX === 'undefined') $(target).attr('data-paralax-initial-offset-x', $(target).offset().left - parentOffset.left - ($(container).width() / 2));
+    if(typeof initialOffsetY === 'undefined') $(target).attr('data-paralax-initial-offset-y', $(target).offset().top - parentOffset.top - ($(container).height() / 2));
+    // compute layer positions relatively to the parent position
+    pageX -= parentOffset.left;
+    pageY -= parentOffset.top;
+    // compute layer X position
+    var x = ($(window).width() - $(target).width()) / 2 - (pageX - ($(window).width() / 2)) / layer_coeff;
+    offset.left = x;
+    // compute layer Y position
+    var y = ($(window).height() - $(target).height()) / 2 - (pageY - ($(window).height() / 2)) / layer_coeff;
+    offset.top = y;
+    // take the offset of the container into account
+    if(parentOffset.left) offset.left += parentOffset.left;
+    if(parentOffset.top) offset.top += parentOffset.top;
+    // take the initial offset into account
+    offset.left += parseInt(initialOffsetX);
+    offset.top += parseInt(initialOffsetY);
+    // apply offset to the layer
+    $(target).offset(offset);
+}</script>
+    <style class="silex-inline-styles">.body-initial {background-color: rgba(255,255,255,1); position: static;}.silex-id-1478366444112-1 {background-color: transparent; position: static; margin-top: -1px;}.silex-id-1478366444112-0 {background-color: transparent; min-height: 100px; position: relative; margin-left: auto; margin-right: auto;}.silex-id-1474394621033-3 {position: static; margin-top: -1px;}.silex-id-1474394621032-2 {background-color: transparent; min-height: 600px; position: relative; margin-left: auto; margin-right: auto;}.silex-id-1478366450713-3 {background-color: transparent; position: static; margin-top: -1px;}.silex-id-1478366450713-2 {background-color: transparent; min-height: 100px; position: relative; margin-left: auto; margin-right: auto;}.silex-id-1442914737143-3 {width: 241px; top: 26px; left: 494px; min-height: 51px; position: absolute;}.silex-id-1662630664250-0 {width: 100px; min-height: 100px; position: absolute; top: 320px; left: 559px;}@media only screen and (max-width: 480px) {}</style>
+    <title>NaDodavke.sk</title>
+    
+
+    
+<style class="silex-prodotype-style" data-style-id="all-style">.text-element > .silex-element-content {font-family: 'Roboto', sans-serif;}</style><meta name="viewport" content="width=device-width, initial-scale=1"><style class="silex-style-settings">.website-width {width: 1200px;}@media (min-width: 481px) {.silex-editor {min-width: 1400px;}}</style><meta property="description" content="Expresná preprava tovaru, zásielok a vecí - Trenčín"><link href="icon%2032x32.png" rel="shortcut icon"><meta content="summary" property="twitter:card"><meta property="og:type" content="website"><meta property="twitter:title" content="NaDodavke.sk"><meta property="og:title" content="NaDodavke.sk"><meta property="twitter:description" content="Expresná preprava tovaru, zásielok a vecí - Trenčín"><meta property="og:description" content="Expresná preprava tovaru, zásielok a vecí - Trenčín"><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" class="silex-custom-font"><link href="https://fonts.googleapis.com/css?family= https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" class="silex-custom-font"><link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Source Sans Pro" rel="stylesheet" class="silex-custom-font"><link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" class="silex-custom-font"></head>
+
+<body data-silex-id="body-initial" class="body-initial all-style enable-mobile prevent-resizable prevent-selectable editable-style silex-runtime" data-silex-type="container-element" style="">
+    
+
+
+
+
+
+
+
+
+
+    <section data-silex-type="container-element" class="container-element editable-style silex-id-1478366444112-1 section-element prevent-resizable page-page-1 paged-element" data-silex-id="silex-id-1478366444112-1">
+        <div data-silex-type="container-element" class="editable-style silex-element-content silex-id-1478366444112-0 container-element website-width" data-silex-id="silex-id-1478366444112-0"></div>
+    </section>
+    <section data-silex-type="container-element" class="container-element editable-style silex-id-1474394621033-3 section-element prevent-resizable page-page-1 paged-element" data-silex-id="silex-id-1474394621033-3">
+        <div data-silex-type="container-element" class="editable-style silex-element-content silex-id-1474394621032-2 container-element website-width selected" data-silex-id="silex-id-1474394621032-2"><div data-silex-type="text-element" class="editable-style text-element silex-id-1662630664250-0" data-silex-id="silex-id-1662630664250-0"><div class="silex-element-content normal"><p>New text box</p></div></div></div>
+    </section>
+    <section data-silex-type="container-element" class="container-element editable-style silex-id-1478366450713-3 section-element prevent-resizable page-page-1 paged-element" data-silex-id="silex-id-1478366450713-3">
+        <div data-silex-type="container-element" class="editable-style silex-element-content silex-id-1478366450713-2 container-element website-width" data-silex-id="silex-id-1478366450713-2">
+
+            <div data-silex-id="silex-id-1442914737143-3" class="editable-style silex-id-1442914737143-3 text-element" data-silex-type="text-element">
+                <div class="silex-element-content normal"><p>Powered by <a href="https://www.silex.me/" target="_blank" title="Silex website builder,  free and open source" linktype="LinkTypeExternal">Silex website builder</a></p></div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
